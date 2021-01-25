@@ -108,9 +108,9 @@
 				  <div class="form-group">
 					<label for="restaurantOperationHours">Operation Hours: </label></br>
 					<label for="restaurantStartTime">Start Time: </label>
-					<input type="time" class="form-control" id="restaurantStartTime" name="restaurantStartTime" value="<?php echo time($row['restaurantStartTime']); ?>" required></br>
+					<input type="time" class="form-control" id="restaurantStartTime" name="restaurantStartTime" value="<?php echo date('H:i:s', strtotime($row['restaurantStartTime'])); ?>" required></br>
 					<label for="restaurantEndTime">End Time: </label>
-					<input type="time" class="form-control" id="restaurantEndTime" name="restaurantEndTime" value="<?php echo $row['restaurantEndTime']; ?>" required>
+					<input type="time" class="form-control" id="restaurantEndTime" name="restaurantEndTime" value="<?php echo date('H:i:s', strtotime($row['restaurantEndTime'])); ?>" required>
 				  </div>
 				  <div class="form-group">
 					<label for="restaurantDescript">Description: </label>

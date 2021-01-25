@@ -108,9 +108,9 @@
 				  <div class="form-group">
 					<label for="hotelOperationHours">Operation Hours: </label></br>
 					<label for="hotelStartTime">Start Time: </label>
-					<input type="time" class="form-control" id="hotelStartTime" name="hotelStartTime" value="<?php echo time($row['hotelStartTime']); ?>" required></br>
+					<input type="time" class="form-control" id="hotelStartTime" name="hotelStartTime" value="<?php echo date('H:i:s', strtotime($row['hotelStartTime'])); ?>" required></br>
 					<label for="hotelEndTime">End Time: </label>
-					<input type="time" class="form-control" id="hotelEndTime" name="hotelEndTime" value="<?php echo $row['hotelEndTime']; ?>" required>
+					<input type="time" class="form-control" id="hotelEndTime" name="hotelEndTime" value="<?php echo date('H:i:s', strtotime($row['hotelEndTime'])); ?>" required>
 				  </div>
 				  <div class="form-group">
 					<label for="hotelDescript">Description: </label>

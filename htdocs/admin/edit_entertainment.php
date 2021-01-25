@@ -108,9 +108,9 @@
 				  <div class="form-group">
 					<label for="enternOperationHours">Operation Hours: </label></br>
 					<label for="enternStartTime">Start Time: </label>
-					<input type="time" class="form-control" id="enternStartTime" name="enternStartTime" value="<?php echo time($row['enternStartTime']); ?>" required></br>
+					<input type="time" class="form-control" id="enternStartTime" name="enternStartTime" value="<?php echo date('H:i:s', strtotime($row['enternStartTime'])); ?>" required></br>
 					<label for="enternEndTime">End Time: </label>
-					<input type="time" class="form-control" id="enternEndTime" name="enternEndTime" value="<?php echo $row['enternEndTime']; ?>" required>
+					<input type="time" class="form-control" id="enternEndTime" name="enternEndTime" value="<?php echo date('H:i:s', strtotime($row['enternEndTime'])); ?>" required>
 				  </div>
 				  <div class="form-group">
 					<label for="enternDescript">Description: </label>
