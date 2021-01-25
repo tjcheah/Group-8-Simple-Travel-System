@@ -12,6 +12,9 @@
 	} else{
 		$row['enternName'] = "";
 		$row['enternDescript'] = "";
+		$row['enternAddress'] = "";
+		$row['enternStartTime'] = "";
+		$row['enternEndTime'] = "";
 		$row['type'] = "";
 		$title = "Add Entertainment";
 	}
@@ -97,6 +100,17 @@
 							<option value="<?php echo $row2['town_id']; ?>"><?php echo $row2['town_name']; ?></option>
 						<?php } ?>
 					</select>
+				  </div>
+				  <div class="form-group">
+					<label for="enternAddress">Address: </label>
+					<textarea type="text" class="form-control" rows="5" id="enternAddress" name="enternAddress" required><?php echo $row['enternAddress']; ?></textarea>
+				  </div>
+				  <div class="form-group">
+					<label for="enternOperationHours">Operation Hours: </label></br>
+					<label for="enternStartTime">Start Time: </label>
+					<input type="time" class="form-control" id="enternStartTime" name="enternStartTime" value="<?php echo time($row['enternStartTime']); ?>" required></br>
+					<label for="enternEndTime">End Time: </label>
+					<input type="time" class="form-control" id="enternEndTime" name="enternEndTime" value="<?php echo $row['enternEndTime']; ?>" required>
 				  </div>
 				  <div class="form-group">
 					<label for="enternDescript">Description: </label>

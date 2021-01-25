@@ -12,6 +12,9 @@
 	} else{
 		$row['restaurantName'] = "";
 		$row['restaurantDescript'] = "";
+		$row['restaurantAddress'] = "";
+		$row['restaurantStartTime'] = "";
+		$row['restaurantEndTime'] = "";
 		$row['type'] = "";
 		$title = "Add Restaurant";
 	}
@@ -97,6 +100,17 @@
 							<option value="<?php echo $row2['town_id']; ?>"><?php echo $row2['town_name']; ?></option>
 						<?php } ?>
 					</select>
+				  </div>
+				  <div class="form-group">
+					<label for="restaurantAddress">Address: </label>
+					<textarea type="text" class="form-control" rows="5" id="restaurantAddress" name="restaurantAddress" required><?php echo $row['restaurantAddress']; ?></textarea>
+				  </div>
+				  <div class="form-group">
+					<label for="restaurantOperationHours">Operation Hours: </label></br>
+					<label for="restaurantStartTime">Start Time: </label>
+					<input type="time" class="form-control" id="restaurantStartTime" name="restaurantStartTime" value="<?php echo time($row['restaurantStartTime']); ?>" required></br>
+					<label for="restaurantEndTime">End Time: </label>
+					<input type="time" class="form-control" id="restaurantEndTime" name="restaurantEndTime" value="<?php echo $row['restaurantEndTime']; ?>" required>
 				  </div>
 				  <div class="form-group">
 					<label for="restaurantDescript">Description: </label>

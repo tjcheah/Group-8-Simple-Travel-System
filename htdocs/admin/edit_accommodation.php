@@ -12,6 +12,9 @@
 	} else{
 		$row['hotelName'] = "";
 		$row['hotelDescript'] = "";
+		$row['hotelAddress'] = "";
+		$row['hotelStartTime'] = "";
+		$row['hotelEndTime'] = "";
 		$row['type'] = "";
 		$title = "Add Accommodation";
 	}
@@ -97,6 +100,17 @@
 							<option value="<?php echo $row2['town_id']; ?>"><?php echo $row2['town_name']; ?></option>
 						<?php } ?>
 					</select>
+				  </div>
+				  <div class="form-group">
+					<label for="hotelAddress">Address: </label>
+					<textarea type="text" class="form-control" rows="5" id="hotelAddress" name="hotelAddress" required><?php echo $row['hotelAddress']; ?></textarea>
+				  </div>
+				  <div class="form-group">
+					<label for="hotelOperationHours">Operation Hours: </label></br>
+					<label for="hotelStartTime">Start Time: </label>
+					<input type="time" class="form-control" id="hotelStartTime" name="hotelStartTime" value="<?php echo time($row['hotelStartTime']); ?>" required></br>
+					<label for="hotelEndTime">End Time: </label>
+					<input type="time" class="form-control" id="hotelEndTime" name="hotelEndTime" value="<?php echo $row['hotelEndTime']; ?>" required>
 				  </div>
 				  <div class="form-group">
 					<label for="hotelDescript">Description: </label>
