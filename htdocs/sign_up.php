@@ -101,6 +101,7 @@
 			<label>Phone Number</label>
 			<input class="form-input" type="tel" name="phoneNum" required />
 		</div>
+		<p>By clicking Register, you agree to our <a href="Terms and Conditions.php">Terms and Conditions</a>. </p>
 		<div class="form-field">
 			<input class="button" type="submit" name="register" value="Register">
 		</div>
