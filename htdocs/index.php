@@ -136,6 +136,11 @@
 					<?php $row = mysqli_fetch_array($user); ?>
 					<form method="POST" action="/php/update_user.php">
 					  <div class="form-group">
+						<label>Image: </label>
+						<br>
+						<img src='<?php echo $row['images']; ?>' width="130" height="150">
+					  </div>
+					  <div class="form-group">
 						<label for="user_id">UserID: </label>
 						<input type="text" class="form-control" value="<?php echo $row['user_id']; ?>" disabled readonly>
 					  </div>
