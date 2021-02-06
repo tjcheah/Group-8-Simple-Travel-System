@@ -134,6 +134,7 @@
 				</div>
 				<div class="my-5 col-8">
 					<?php $row = mysqli_fetch_array($user); ?>
+<<<<<<< HEAD
 					<?php
 						include("config.php");
 
@@ -163,12 +164,9 @@
 					<input type='submit' value='Save name' name='but_upload'>
 					</form>
 					
+=======
+>>>>>>> main
 					<form method="POST" action="/php/update_user.php">
-					  <div class="form-group">
-						<label>Image: </label>
-						<br>
-						<img src='<?php echo $row['images']; ?>' width="130" height="150">
-					  </div>
 					  <div class="form-group">
 						<label for="user_id">UserID: </label>
 						<input type="text" class="form-control" value="<?php echo $row['user_id']; ?>" disabled readonly>
