@@ -160,6 +160,10 @@
 							}
 						}
 					?>
+					<form method="post" action="" enctype='multipart/form-data'>
+						<input type='file' name='file' />
+						<input type='submit' value='Save name' name='but_upload'>
+					</form>
 					<form method="POST" action="/php/update_user.php">
 					  <div class="form-group">
 						<label>Image: </label>
