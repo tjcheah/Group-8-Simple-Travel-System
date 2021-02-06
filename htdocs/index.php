@@ -155,7 +155,7 @@
 								$query = "update user_detail set images = '".$image."' where user_id = '".$id."' ";
 								mysqli_query($con,$query);
 							}
-						}
+						} 
 					?>
 
 					<form method="post" action="" enctype='multipart/form-data'>
