@@ -26,7 +26,7 @@
 				while($row = mysqli_fetch_array($result)){
 					$text .= 	'<div class="list-group-item my-2 bg-light">'.
 									'<div style="float: right">'.
-										'<a href="edit_itinerary.php?town_id='.$row['town_id'].'&db=entertainment" class="btn btn-info active mx-3" role="button" aria-pressed="true">Add Itinerary</a>'.
+										'<a href="edit_itinerary.php?town_id='.$row['town_id'].'&entern_id='.$row['entern_id'].'&db=entertainment" class="btn btn-info active mx-3" role="button" aria-pressed="true">Add Itinerary</a>'.
 									'</div>'.
 									'<span class="my-4">Entertainment Name: ' . $row['enternName'] . '</span>'.
 									'<p>'.$row['enternDescript'].'</p>'.
@@ -43,7 +43,7 @@
 				while($row = mysqli_fetch_array($result)){
 					$text .= 	'<div class="list-group-item my-2 bg-light">'.
 									'<div style="float: right">'.
-										'<a href="edit_itinerary.php?town_id='.$row['town_id'].'&db=restaurant" class="btn btn-info active mx-3" role="button" aria-pressed="true">Add Itinerary</a>'.
+										'<a href="edit_itinerary.php?town_id='.$row['town_id'].'&restaurant_id='.$row['restaurant_id'].'&db=restaurant" class="btn btn-info active mx-3" role="button" aria-pressed="true">Add Itinerary</a>'.
 									'</div>'.
 									'<span class="my-4">Restaurant Name: ' . $row['restaurantName'] . '</span>'.
 									'<p>'.$row['restaurantDescript'].'</p>'.
@@ -59,7 +59,7 @@
 				while($row = mysqli_fetch_array($result)){
 					$text .= '<div class="list-group-item my-2 bg-light">'.
 								'<div style="float: right">'.
-									'<a href="edit_itinerary.php?town_id='.$row['town_id'].'&db=hotel" class="btn btn-info active mx-3" role="button" aria-pressed="true">Add Itinerary</a>'.
+									'<a href="edit_itinerary.php?town_id='.$row['town_id'].'&hotel_id='.$row['hotel_id'].'&db=hotel" class="btn btn-info active mx-3" role="button" aria-pressed="true">Add Itinerary</a>'.
 								'</div>'.
 								'<span class="my-4">Accommodation Name: ' . $row['hotelName'] . '</span>'.
 								'<p>'.$row['hotelDescript'].'</p>'.
@@ -75,7 +75,7 @@
 				while($row = mysqli_fetch_array($result)){
 					$text .= '<div class="list-group-item my-2 bg-light">'.
 								'<div style="float: right">'.
-									'<a href="edit_itinerary.php?town_id='.$row['town_id'].'&db=event" class="btn btn-info active mx-3" role="button" aria-pressed="true">Add Itinerary</a>'.
+									'<a href="edit_itinerary.php?town_id='.$row['town_id'].'&event_id='.$row['event_id'].'&db=event" class="btn btn-info active mx-3" role="button" aria-pressed="true">Add Itinerary</a>'.
 								'</div>'.
 								'<span class="my-4">Package Name: ' . $row['eventName'] . '</span>'.
 								'<p>'.$row['note'].'</p>'.

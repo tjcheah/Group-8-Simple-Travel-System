@@ -1,0 +1,50 @@
+/*new create town table*/
+CREATE TABLE IF NOT EXISTS `town` (
+               `town_id` int(11) NOT NULL AUTO_INCREMENT,
+	       `country` varchar(50) NOT NULL,
+               `town_name` varchar(50) NOT NULL,
+	       `town_address` text NOT NULL,
+               `town_description` text NOT NULL,
+               PRIMARY KEY (`town_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+/*new create entertainment table*/
+CREATE TABLE IF NOT EXISTS `entertainment` (
+               `entern_id` int(10) NOT NULL AUTO_INCREMENT,
+               `enternName` varchar(20) NOT NULL,
+	       `enternAddress` text NOT NULL,
+	       `enternStartTime` time(6) NOT NULL,
+	       `enternEndTime` time(6) NOT NULL,
+               `enternDescript` text NOT NULL,
+               `type` varchar(30) NOT NULL,
+               `town_id` int(11) NOT NULL,
+               PRIMARY KEY (`entern_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+
+/*new create hotel table*/
+CREATE TABLE IF NOT EXISTS `hotel` (
+               `hotel_id` int(10) NOT NULL AUTO_INCREMENT,
+               `hotelName` varchar(20) NOT NULL,
+	       `hotelAddress` text NOT NULL,
+	       `hotelStartTime` time(6) NOT NULL,
+	       `hotelEndTime` time(6) NOT NULL,
+	       `hotelDescript` text NOT NULL,
+               `type` varchar(30) NOT NULL,
+               `town_id` int(11) NOT NULL,
+               PRIMARY KEY (`hotel_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+
+
+/*new create restaurant table*/
+CREATE TABLE IF NOT EXISTS `restaurant` (
+               `restaurant_id` int(10) NOT NULL AUTO_INCREMENT,
+               `restaurantName` varchar(20) NOT NULL,
+	       `restaurantAddress` text NOT NULL,
+	       `restaurantStartTime` time(6) NOT NULL,
+	       `restaurantEndTime` time(6) NOT NULL,
+               `restaurantDescript` text NOT NULL,
+               `type` varchar(30) NOT NULL,
+               `town_id` int(11) NOT NULL,
+               PRIMARY KEY (`restaurant_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+

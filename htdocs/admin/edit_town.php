@@ -10,7 +10,9 @@
 		$row = mysqli_fetch_array($town);
 		$title = "Update Town";
 	} else{
+		$row['country'] = "";
 		$row['town_name'] = "";
+		$row['town_address'] = "";
 		$row['town_description'] = "";
 		$title = "Add Town";
 	}
@@ -77,15 +79,23 @@
 				<h2><?php echo $title; ?></h2>
 				<form method="POST" action="../php/update_town.php">
 					<?php if(isset($row['town_id'])){?>
-						<input type="hidden" name="town_id" value="<?php echo $row['town_id'] ?>">
+						<input type="hidden" name="town_id" value="<?php echo $row['town_id'] ?>" required>
 					<?php } ?>
 				  <div class="form-group">
+					<label for="country">Country: </label>
+					<input type="text" class="form-control" id="country" name="country" value="<?php echo $row['country']; ?>" required>
+				  </div>
+				  <div class="form-group">
 					<label for="town_name">Town Name: </label>
-					<input type="text" class="form-control" id="town_name" name="town_name" value="<?php echo $row['town_name']; ?>">
+					<input type="text" class="form-control" id="town_name" name="town_name" value="<?php echo $row['town_name']; ?>" required>
+				  </div>
+				  <div class="form-group">
+					<label for="town_address">Town Address: </label>
+					<textarea type="text" class="form-control" rows="5" id="town_address" name="town_address" required><?php echo $row['town_address']; ?></textarea>
 				  </div>
 				  <div class="form-group">
 					<label for="town_description">Description: </label>
-					<textarea type="text" class="form-control" rows="5" id="town_description" name="town_description"><?php echo $row['town_description']; ?></textarea>
+					<textarea type="text" class="form-control" rows="5" id="town_description" name="town_description" required><?php echo $row['town_description']; ?></textarea>
 				  </div>
 				  <div class="text-right">
 					  <button type="submit" class="btn btn-primary col-1 mr-2">Save</button>
