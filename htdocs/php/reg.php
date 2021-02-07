@@ -6,6 +6,10 @@
 		login();
 	}
 
+	if (isset($_POST['remember'])) {
+		remember();
+	}
+	
 	function register(){
 		require "user_db.php";
 		$previous = "javascript:history.go(-1)";
@@ -40,6 +44,16 @@
 		if($row){
 			session_start();
 			$_SESSION["user_id"] = $row['user_id'];
+			if(!empty($_POST["remember"])) {
+				setcookie ("login",$_POST["user_name"],time()+ 3600, "/");
+				setcookie ("login_password",$_POST["pass_word"],time()+ 3600, "/");
+			} else {
+				unset($_COOKIE["login"]);
+				unset($_COOKIE["login_password"]);
+				setcookie ("login",null,-1, "/");
+				setcookie ("login_password",null,-1, "/");
+
+			}
 			header("Location: /index.php");exit;
 		} else{
 			$sql = "SELECT * FROM admin WHERE admin_name = '".$_POST['user_name']."' AND pass_word = '".$_POST['pass_word']."'";
@@ -55,7 +69,6 @@
 			}
 		}
 	}
-
 	
 	session_start();
 	
@@ -87,7 +100,5 @@ if(!empty($_POST["login"])) {
 	}
 	
 }
-?>
-
 ?>
 
