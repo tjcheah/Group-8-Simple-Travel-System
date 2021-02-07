@@ -69,11 +69,11 @@
 	<form class="form" method="post" action="/php/reg.php">
 		<div class="form-field">
 			<label>Username</label>
-			<input class="form-input" type="text" name="user_name" required />
+			<input class="form-input" type="text" name="user_name" value="<?php if(isset($_COOKIE["login"])) {echo $_COOKIE["login"];}?>" required />
 		</div>
 		<div class="form-field">
 			<label>Password</label>
-			<input class="form-input" type="password" name="pass_word" required />
+			<input class="form-input" type="password" name="pass_word" value="<?php if(isset($_COOKIE["login_password"])) {echo $_COOKIE["login_password"];}?>" required />
 		</div>
 		<div class="form-field">
 			<input class="button" type="submit" name="login" value="Login">
@@ -88,12 +88,18 @@
 			}
 			?>
 		</div>
-		<br>
 		<div class="form-field">
 			<span>No yet a member?</span>&nbsp;<a href="/sign_up.php" class="sign_up">Sign up</a>
 		</div>
+		<div class="field-group">
+        <div>
+            <input type="checkbox" name="remember" id="remember"
+                <?php if(isset($_COOKIE["login"])) { ?> checked
+                <?php } ?> /> <label for="remember-me">Remember me</label>
+        </div>
 	</form>
 </div>
 </body>
 <script src="/assets/js/jquery-3.3.1.js"></script>
 </html>
+
