@@ -55,39 +55,4 @@
 			}
 		}
 	}
-
-	
-	session_start();
-	
-if(!empty($_POST["login"])) {
-	$conn = mysqli_connect("localhost", "user_name", "pass_word", "database");
-	$sql = "SELECT * FROM user_detail WHERE user_name = '".$_POST['user_name']."' AND pass_word = '".$_POST['pass_word']."'";
-		$user = mysqli_query($conn, $sql);
-		$row = mysqli_fetch_array($user);
-        if(!isset($_COOKIE["login"])) {
-            $sql .= " AND pass_word = '" . md5($_POST["pass_word"]) . "'";
-	}
-        $result = mysqli_query($conn,$sql);
-	$user = mysqli_fetch_array($result);
-	
-	if($user) {
-			$_SESSION["user_id"] = $user["user_id"];
-			
-			if(!empty($_POST["remember"])) {
-				setcookie ("login",$_POST["user_name"],time()+ 3600, "/");
-				setcookie ("login_password",$_POST["pass_word"],time()+ 3600, "/");
-			} else {
-				if(isset($_COOKIE["login"])) {
-					setcookie ("login","");
-					setcookie ("login_password","");
-				}
-			}
-	} else {
-		$message = "Invalid Login";
-	}
-	
-}
 ?>
-
-?>
-
