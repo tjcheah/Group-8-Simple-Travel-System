@@ -134,20 +134,22 @@
 				</div>
 				<div class="my-5 col-8">
 					<?php $row = mysqli_fetch_array($user); ?>
-<<<<<<< HEAD
 					<?php
 						include("config.php");
-
 						if(!empty('file') && isset($_POST['but_upload'])){
 							$name = $_FILES['file']['name'];
 							$target_dir = "upload/";
 							$target_file = $target_dir . basename($_FILES["file"]["name"]);
+
 							// Select file type
 							$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+
 							// Valid file extensions
 							$extensions_arr = array("jpg","jpeg","png","gif");
+
 							// Check extension
 							if( in_array($imageFileType,$extensions_arr) ){
+							
 								// Convert to base64 
 								$image_base64 = base64_encode(file_get_contents($_FILES['file']['tmp_name']) );
 								$image = 'data:image/'.$imageFileType.';base64,'.$image_base64;
@@ -156,17 +158,18 @@
 								$query = "update user_detail set images = '".$image."' where user_id = '".$id."' ";
 								mysqli_query($con,$query);
 							}
-						} 
+						}
 					?>
-
 					<form method="post" action="" enctype='multipart/form-data'>
-					<input type='file' name='file' />
-					<input type='submit' value='Save name' name='but_upload'>
+						<input type='file' name='file' />
+						<input type='submit' value='Save name' name='but_upload'>
 					</form>
-					
-=======
->>>>>>> main
 					<form method="POST" action="/php/update_user.php">
+					  <div class="form-group">
+						<label>Image: </label>
+						<br>
+						<img src='<?php echo $row['images']; ?>' width="130" height="150">
+					  </div>
 					  <div class="form-group">
 						<label for="user_id">UserID: </label>
 						<input type="text" class="form-control" value="<?php echo $row['user_id']; ?>" disabled readonly>
@@ -233,11 +236,12 @@ function change_day(day_id){
 }
 
 $(".search_town_bar").keyup(function(){
+	var search_town_bar_data = $(this).val().trim() 
 	$.ajax({
 		url: "/php/search_town_bar.php",
 		method: "POST",
 		data: {
-			data: $(this).val()
+			data: search_town_bar_data 
 		},
 		success: function(data){
 			$('#town_bar_list').html(data);

@@ -7,7 +7,7 @@
 		$sql = "SELECT * FROM itinerary WHERE day_id = 1 AND user_id = " . $_SESSION['user_id'];
 		$result = mysqli_query($conn, $sql);
 	} else{
-		$sql = 	"SELECT * FROM itinerary WHERE day_id = " . $_POST['id'] . " AND user_id = " . $_SESSION['user_id'];
+		$sql = 	"SELECT * FROM itinerary WHERE day_id = " . $_POST['id'] . " AND user_id = " . $_SESSION['user_id'] . " ORDER BY STR_TO_DATE(itineraryTime, '%l:%i%p')";
 		$result = mysqli_query($conn, $sql);
 		
 		if(mysqli_num_rows($result) <= 0){
