@@ -233,11 +233,12 @@ function change_day(day_id){
 }
 
 $(".search_town_bar").keyup(function(){
+	var search_town_bar_data = $(this).val().trim() //replace is added to remove empty space (JackNa0928)
 	$.ajax({
 		url: "/php/search_town_bar.php",
 		method: "POST",
 		data: {
-			data: $(this).val()
+			data: search_town_bar_data //replace is added to remove empty space (JackNa0928)
 		},
 		success: function(data){
 			$('#town_bar_list').html(data);
