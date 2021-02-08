@@ -210,7 +210,7 @@
 			<input class="col-md-8 py-2 my-4 search_user" type="text" name="search" placeholder="Search User" />
 			<div id="user_list" class="list-group">
 				<?php while($row = mysqli_fetch_array($user)){ ?>
-					<a href="/admin/edit_user?id=<?php echo $row['user_id']; ?>" class="list-group-item my-2">
+					<a href="/admin/edit_user.php?id=<?php echo $row['user_id']; ?>" class="list-group-item my-2">
 						<div class="ml-2 mr-5 my-3" style="float: left;">
 							<i class="fas fa-user fa-3x"></i>
 						</div>
